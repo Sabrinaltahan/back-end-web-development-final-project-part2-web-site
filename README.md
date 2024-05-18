@@ -78,3 +78,14 @@ The frontend project is structured as follows:
 - AJAX (for API requests)
 
 By following this structure and utilizing the provided endpoints, the frontend project effectively communicates with the backend API to provide a dynamic and responsive user experience for the Fast-Food-Rest website.
+
+
+
+admin account:
+email: admin@admin.com
+password: 12345678
+
+
+user account:
+email: user@user.com
+password: 12345678
