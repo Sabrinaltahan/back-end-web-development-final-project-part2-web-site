@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append('image', document.getElementById('image').files[0]);
 
         try {
-            const response = await fetch('http://localhost:3000/items', {
+            const response = await fetch('https://back-end-web-development-final-project.onrender.com/items', {
                 method: 'POST',
                 headers: {
                     'Authorization': `${JSON.parse(localStorage.getItem('user')).token}`

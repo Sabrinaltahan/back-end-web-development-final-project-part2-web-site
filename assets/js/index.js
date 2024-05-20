@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const user = JSON.parse(localStorage.getItem('user'));
 
     // Fetch menu items and populate the menu section
-    fetch('http://localhost:3000/items')
+    fetch('https://back-end-web-development-final-project.onrender.com/items')
         .then(response => response.json())
         .then(items => {
             items.forEach(item => {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 menuItem.classList.add('menu-item', 'col-md-3');
 
                 const image = document.createElement('img');
-                image.src = `http://localhost:3000${item.image}`;
+                image.src = `https://back-end-web-development-final-project.onrender.com${item.image}`;
                 image.alt = `Image of ${item.label}`;
 
                 const title = document.createElement('h4');
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             date: document.getElementById('order-date').value
         };
 
-        fetch('http://localhost:3000/orders', {
+        fetch('https://back-end-web-development-final-project.onrender.com/orders', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ordersTable = document.querySelector('.table tbody');
 
     // Fetch user's orders
-    fetch('http://localhost:3000/orders/my-orders', {
+    fetch('https://back-end-web-development-final-project.onrender.com/orders/my-orders', {
         headers: {
             'Authorization': `${JSON.parse(localStorage.getItem('user')).token}`
         }
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 actionButton.textContent = 'Cancel';
                 actionButton.addEventListener('click', () => {
                     // Handle order cancellation
-                    fetch(`http://localhost:3000/orders/${order._id}`, {
+                    fetch(`https://back-end-web-development-final-project.onrender.com/orders/${order._id}`, {
                         method: 'DELETE',
                         headers: {
                             'Authorization': `${JSON.parse(localStorage.getItem('user')).token}`

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fetch and populate menu items
     const fetchMenuItems = () => {
-        fetch('http://localhost:3000/items')
+        fetch('https://back-end-web-development-final-project.onrender.com/items')
             .then(response => response.json())
             .then(items => {
                 items.forEach(item => {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     const imageCell = document.createElement('td');
                     const img = document.createElement('img');
-                    img.src = `http://localhost:3000${item.image}`;
+                    img.src = `https://back-end-web-development-final-project.onrender.com${item.image}`;
                     img.alt = item.label;
                     img.style.maxWidth = '50px';
                     imageCell.appendChild(img);
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     deleteButton.classList.add('btn', 'btn-danger');
                     deleteButton.textContent = 'Delete';
                     deleteButton.addEventListener('click', () => {
-                        fetch(`http://localhost:3000/items/${item._id}`, {
+                        fetch(`https://back-end-web-development-final-project.onrender.com/items/${item._id}`, {
                             method: 'DELETE',
                             headers: {
                                 'Authorization': `${JSON.parse(localStorage.getItem('user')).token}`
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fetch and populate orders
     const fetchOrders = () => {
-        fetch('http://localhost:3000/orders', {
+        fetch('https://back-end-web-development-final-project.onrender.com/orders', {
             headers: {
                 'Authorization': `${JSON.parse(localStorage.getItem('user')).token}`
             }
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 acceptButton.classList.add('btn', 'btn-success');
                 acceptButton.textContent = 'Accept';
                 acceptButton.addEventListener('click', () => {
-                    fetch(`http://localhost:3000/orders/accept/${order._id}`, {
+                    fetch(`https://back-end-web-development-final-project.onrender.com/orders/accept/${order._id}`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json',
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cancelButton.classList.add('btn', 'btn-danger');
                 cancelButton.textContent = 'Cancel';
                 cancelButton.addEventListener('click', () => {
-                    fetch(`http://localhost:3000/orders/${order._id}`, {
+                    fetch(`https://back-end-web-development-final-project.onrender.com/orders/${order._id}`, {
                         method: 'DELETE',
                         headers: {
                             'Authorization': `${JSON.parse(localStorage.getItem('user')).token}`
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fetch and display messages
     const fetchMessages = () => {
-        fetch('http://localhost:3000/messages', {
+        fetch('https://back-end-web-development-final-project.onrender.com/messages', {
             headers: {
                 'Authorization': `${JSON.parse(localStorage.getItem('user')).token}`
             }

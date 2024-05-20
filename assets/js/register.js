@@ -13,7 +13,7 @@ registerForm.addEventListener('submit', async (event) => {
     const password = document.getElementById('password').value;
 
     try {
-    const response = await fetch('http://localhost:3000/auth/register', {
+    const response = await fetch('https://back-end-web-development-final-project.onrender.com/auth/register', {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'

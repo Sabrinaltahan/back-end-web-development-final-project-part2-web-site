@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: document.getElementById('message-content').value,
         };
 
-        fetch('http://localhost:3000/messages', {
+        fetch('https://back-end-web-development-final-project.onrender.com/messages', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
